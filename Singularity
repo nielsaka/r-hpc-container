@@ -3,6 +3,7 @@ OSVersion: xenial
 MirrorURL: http://archive.ubuntu.com/ubuntu/
 
 %post
+  sed -i 's/main/main universe/g' /etc/apt/sources.list
   apt-get update
 
   # Install R, openmpi
