@@ -1,6 +1,6 @@
 Bootstrap: debootstrap
-OSVersion: stretch
-MirrorURL: http://ftp.us.debian.org/debian/
+OSVersion: xenial
+MirrorURL: http://archive.ubuntu.com/ubuntu/
 
 %post
   apt-get update
@@ -14,6 +14,9 @@ MirrorURL: http://ftp.us.debian.org/debian/
 
   # Install required R packages
   R --slave -e 'install.packages("doMPI", repos="http://cloud.r-project.org/")'
+
+%test 
+  R -e "library(doMPI)"
 
 %runscript
   R -e "library(doMPI); cl <- startMPIcluster(count = 5); registerDoMPI(cl); foreach(i=1:5) %dopar% Sys.sleep(10); closeCluster(cl); mpi.quit()"
