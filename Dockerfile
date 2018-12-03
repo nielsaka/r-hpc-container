@@ -47,6 +47,8 @@ CMD /bin/sh
 
 
 # Latex packages??
+RUN tlmgr install koma-script todonotes xcolor pgf mathtools preprint enumitem acronym bigfoot xstring beebe
+
 
 
 # this is for 'fooling' package management into considering
@@ -63,6 +65,7 @@ CMD /bin/sh
 
 #  # What are these packages for?
 #  && tlmgr install metafont mfware inconsolata tex ae parskip listings \
+## What does "path add" do??
 #  && tlmgr path add \
 #  # Why add R texmf tree? Only for R package docs?
 #  && Rscript -e "tinytex::r_texmf()" \
