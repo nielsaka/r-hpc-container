@@ -22,35 +22,3 @@ RUN apt-get update \
   	&& /opt/TinyTeX/bin/*/tlmgr path add \
 
 CMD /bin/sh
-
-
-# Latex packages??
-# RUN tlmgr install koma-script todonotes xcolor pgf mathtools preprint enumitem acronym bigfoot xstring beebe
-
-
-
-# this is for 'fooling' package management into considering
-# texlive installed
-
-# see https://yihui.name/tinytex/faq/
-
-#RUN wget "https://travis-bin.yihui.name/texlive-local.deb" \
-#  && dpkg -i texlive-local.deb \
-#  && rm texlive-local.deb \
-#  
-#  ## Use tinytex for LaTeX installation
-#  && install2.r --error tinytex #\
-
-#  # What are these packages for?
-#  && tlmgr install metafont mfware inconsolata tex ae parskip listings \
-## What does "path add" do??
-#  && tlmgr path add \
-#  # Why add R texmf tree? Only for R package docs?
-#  && Rscript -e "tinytex::r_texmf()" \
-#  && chown -R root:staff /opt/TinyTeX \
-#  && chmod -R a+w /opt/TinyTeX \
-#  && chmod -R a+wx /opt/TinyTeX/bin \
-#  && echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron \
-
-
-
