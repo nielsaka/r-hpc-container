@@ -19,6 +19,6 @@ RUN apt-get update \
     	"https://github.com/yihui/tinytex/raw/master/tools/install-unx.sh" | \
     	sh -s - --admin --no-path \
   	&& mv ~/.TinyTeX /opt/TinyTeX \
-  	&& /opt/TinyTeX/bin/*/tlmgr path add \
+  	&& /opt/TinyTeX/bin/*/tlmgr path add
 
 CMD /bin/sh
